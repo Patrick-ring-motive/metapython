@@ -27,6 +27,7 @@ if (not current_event_loop_exists()):
     asyncio.run(main())
 else:
   asyncio.create_task(main())
+  asyncio.sleep(0)
 
 
 # Async utility functions
