@@ -195,7 +195,12 @@ def importModuleAs(lib, pkg, alias):
     except Exception as e:
       logging.error(f"Failed to install {lib}: {e}")
       return None
-
+      
+def magic(str):
+  if hasIPy:
+    get_ipython().magic(str)
+  else:
+    print(f"This is where a notebook would run magic {str}")
 
 def fromImport(lib, pkgs):
   for pkg in pkgs:
